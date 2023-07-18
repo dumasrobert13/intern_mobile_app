@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intern_mobile_app/components/login_button.dart';
 
 class LoginPage extends StatelessWidget {
@@ -77,7 +78,7 @@ class LoginPage extends StatelessWidget {
                         const SizedBox(height: 10),
                         //button for email
                         LoginButton(
-                            text: 'Continue with Email', onPressed: () {}, logo: 'lib/assets/images/log-in/email.png',),
+                            text: 'Continue with Email', onPressed: ()  => context.go('/register_login_email'), logo: 'lib/assets/images/log-in/email.png',),
                         const SizedBox(height: 29),
                         const Text(
                           'By signing up, you agree to our Terms of Service and Privacy Policy',
