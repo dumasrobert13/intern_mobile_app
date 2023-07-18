@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:intern_mobile_app/pages/routes/app_route_config.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
-import 'package:intern_mobile_app/pages/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -19,14 +19,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         textTheme: GoogleFonts.poppinsTextTheme(),
         useMaterial3: true,
       ),
-      home: const LoginPage(title: 'Flutter Demo Home Page'),
+      routerConfig: MyAppRouter().router,
     );
   }
 }
