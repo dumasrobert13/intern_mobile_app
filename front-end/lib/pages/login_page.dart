@@ -15,13 +15,13 @@ class LoginPage extends StatelessWidget {
 // Login with Google.
   Future<String> loginUserWithGoogle() async {
     final GoogleSignIn googleSignIn = GoogleSignIn(
-      clientId: '303559538310-a4jqf81agjem14ufmrgpv536k4kiaejs.apps.googleusercontent.com',
-      scopes: ['email']);
+        clientId:
+            '303559538310-a4jqf81agjem14ufmrgpv536k4kiaejs.apps.googleusercontent.com',
+        scopes: ['email']);
 
     try {
-      final GoogleSignInAccount? googleUser =
-          await googleSignIn.signIn();
-          logger.d(googleUser);
+      final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
+      logger.d(googleUser);
       if (googleUser != null) {
         final GoogleSignInAuthentication googleAuth =
             await googleUser.authentication;
@@ -136,7 +136,10 @@ class LoginPage extends StatelessWidget {
                         const SizedBox(height: 10),
                         //button for email
                         LoginButton(
-                            text: 'Continue with Email', onPressed: ()  => context.go('/register_login_email'), logo: 'lib/assets/images/log-in/email.png',),
+                          text: 'Continue with Email',
+                          onPressed: () => context.go('/login_email'),
+                          logo: 'lib/assets/images/log-in/email.png',
+                        ),
                         const SizedBox(height: 29),
                         const Text(
                           'By signing up, you agree to our Terms of Service and Privacy Policy',
