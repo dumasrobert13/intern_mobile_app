@@ -136,14 +136,7 @@ class LoginPage extends StatelessWidget {
                         const SizedBox(height: 10),
                         //button for email
                         LoginButton(
-<<<<<<< HEAD
-                          text: 'Continue with Email',
-                          onPressed: () {},
-                          logo: 'lib/assets/images/log-in/email.png',
-                        ),
-=======
                             text: 'Continue with Email', onPressed: ()  => context.go('/register_login_email'), logo: 'lib/assets/images/log-in/email.png',),
->>>>>>> 5a046fe8487832963cf0c7d96c0bc90241792269
                         const SizedBox(height: 29),
                         const Text(
                           'By signing up, you agree to our Terms of Service and Privacy Policy',
