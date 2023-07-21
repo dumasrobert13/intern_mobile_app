@@ -1,9 +1,10 @@
 
 import 'package:go_router/go_router.dart';
 import 'package:intern_mobile_app/pages/Home/explore.dart';
-import 'package:intern_mobile_app/pages/login_page.dart';
-import 'package:intern_mobile_app/pages/login_email.dart';
-import 'package:intern_mobile_app/pages/register_email.dart';
+import 'package:intern_mobile_app/pages/onboarding/initial_page.dart';
+import '../login-or-register/login_email.dart';
+import '../login-or-register/login_page.dart';
+import '../login-or-register/register_email.dart';
 
 class MyAppRouter {
   GoRouter router = GoRouter(
@@ -27,6 +28,11 @@ class MyAppRouter {
         name: 'register',
         path: '/register_email',
         builder: (context, state) => RegisterEmail(),
+      ),
+      GoRoute(
+        name: 'onBoarding',
+        path: '/on_boarding',
+        builder: (context, state) => OnboardingScreen(),
       ),
     ],
   );
