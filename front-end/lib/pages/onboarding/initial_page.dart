@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:intern_mobile_app/pages/onboarding/preference_screen1.dart';
-import 'package:intern_mobile_app/pages/onboarding/preference_screen2.dart';
-
+import 'package:intern_mobile_app/pages/onboarding/age_screen.dart';
+import 'package:intern_mobile_app/pages/onboarding/avatar_screen.dart';
+import 'package:intern_mobile_app/pages/onboarding/gender_screen.dart';
+import 'package:intern_mobile_app/pages/onboarding/interest_screen.dart';
+import 'package:intern_mobile_app/pages/onboarding/pref1_screen.dart';
+import 'package:intern_mobile_app/pages/onboarding/pref2_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -11,18 +14,20 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  final PageController _pageController = PageController(initialPage: 0, viewportFraction: 0.7);
+  final PageController _pageController =
+      PageController(initialPage: 0, viewportFraction: 0.7);
 
   void _goToNextScreen() {
-    if (_pageController.page! < 2) {
+    if (_pageController.page! < 3) {
       _pageController.nextPage(
         duration: const Duration(milliseconds: 500),
         curve: Curves.ease,
       );
     }
   }
+
   void _back() {
-    if (_pageController.page! < 2) {
+    if (_pageController.page! > 0) {
       _pageController.previousPage(
         duration: const Duration(milliseconds: 500),
         curve: Curves.ease,
@@ -36,10 +41,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       body: PageView(
         scrollDirection: Axis.vertical,
         controller: _pageController,
-        // physics: const NeverScrollableScrollPhysics(), 
+        // physics: const NeverScrollableScrollPhysics(),
         children: [
-          PreferenceScreen1(onPreferenceSelected: _goToNextScreen),
-          PreferenceScreen2(onPreferenceSelected: _back),
+          AgeScreen(onPreferenceSelected: _goToNextScreen),
+          GenderScreen(onPreferenceSelected: _goToNextScreen),
+          AvatarScreen(onPreferenceSelected: _goToNextScreen),
+          Pref1Screen(onPreferenceSelected: _goToNextScreen),
+          Pref2Screen(onPreferenceSelected: _goToNextScreen),
+          InterestScreen(onPreferenceSelected: _goToNextScreen)
           // Add more preference screens as needed
         ],
       ),
