@@ -11,11 +11,9 @@ functions:
     handler: index.handler
     events:
       - httpApi: 
-          path: '/'
-          method: ANY
-      - httpApi: 
-          path: '/path'
-          method: GET
+          path: '/api/google-signin'
+          method: POST
+          
 
   facebookSignIn:
     handler: endpoints.auth.facebookAuth.signIn
