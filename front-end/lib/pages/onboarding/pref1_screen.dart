@@ -7,7 +7,6 @@ class Pref1Screen extends StatelessWidget {
 
   const Pref1Screen({super.key, required this.onPreferenceSelected});
 
-  // Implement the UI for the first preference screen here
 
   void _onPreferenceSelected() {
     // Perform any necessary actions based on the user's preference selection

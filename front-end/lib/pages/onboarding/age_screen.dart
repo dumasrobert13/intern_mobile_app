@@ -6,7 +6,6 @@ class AgeScreen extends StatelessWidget {
 
   const AgeScreen({super.key, required this.onPreferenceSelected});
 
-  // Implement the UI for the first preference screen here
 
   void _onPreferenceSelected() {
     // Perform any necessary actions based on the user's preference selection
@@ -15,13 +14,48 @@ class AgeScreen extends StatelessWidget {
     onPreferenceSelected();
   }
 
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(1900),
+      lastDate: DateTime.now(),
+    );
+
+    // The user picked a date.
+    if (picked != null && picked != DateTime.now()) {
+      // Do something with the selected date.
+      _onPreferenceSelected();
+      print(
+          "Selected date: ${picked.toLocal()}"); // You can replace this with your desired action.
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 21),
+        padding: const EdgeInsets.symmetric(horizontal: 21),
         child: Center(
-          child: OnboardHeader(header: 'How old are you?', currentPage: '2', subheader: 'We want to make sure you are on a legal age',)
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const OnboardHeader(
+                header: 'How old are you?',
+                currentPage: '2',
+                subheader: 'We want to make sure you are on a legal age',
+              ),
+              const SizedBox(height: 21),
+              TextFormField(
+                onTap: () => _selectDate(context),
+                readOnly: true,
+                decoration: const InputDecoration(
+                  labelText: 'Choose yor birthday',
+                  border: OutlineInputBorder(),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
