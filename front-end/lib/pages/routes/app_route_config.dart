@@ -31,7 +31,7 @@ class MyAppRouter {
       GoRoute(
         name: 'onBoarding',
         path: '/on_boarding',
-        builder: (context, state) => OnboardingScreen(),
+        builder: (context, state) => const OnboardingScreen(),
       ),
     ],
   );

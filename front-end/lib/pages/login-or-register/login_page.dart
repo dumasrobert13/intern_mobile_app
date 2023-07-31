@@ -117,11 +117,8 @@ class LoginPage extends StatelessWidget {
                         //button for email
                         LoginButton(
                           text: 'Continue with Email',
-<<<<<<< HEAD:front-end/lib/pages/login_page.dart
                           onPressed: () => context.go('/register_login_email'),
-=======
-                          onPressed: () => context.go('/login_email'),
->>>>>>> main:front-end/lib/pages/login-or-register/login_page.dart
+                          // onPressed: () => context.go('/login_email'),
                           logo: 'lib/assets/images/log-in/email.png',
                         ),
                         const SizedBox(height: 29),
