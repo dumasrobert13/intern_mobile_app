@@ -14,3 +14,10 @@ functions:
           path: '/api/google-signin'
           method: POST
           
+
+  facebookSignIn:
+    handler: endpoints.auth.facebookAuth.signIn
+    events: 
+      - httpApi:
+          path: '/facebook_signin'
+          method: POST
