@@ -16,6 +16,10 @@ class Home extends StatelessWidget {
               onPressed: () => context.goNamed('onBoarding'),
               child: const Text('OnBoarding'),
             ),
+            ElevatedButton(
+              onPressed: () => context.goNamed('login'),
+              child: const Text('Log In'),
+            ),
           ],
         ),
       ),
