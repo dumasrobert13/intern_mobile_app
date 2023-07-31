@@ -2,9 +2,9 @@ const serverless = require("serverless-http");
 const express = require("express");
 const app = express();
 const cors = require('cors');
-const router = require('./endpoints/auth/userAuth.js');
+const router = require('./endpoints/auth/facebookAuth.js');
 
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 app.use(router);
 
@@ -17,12 +17,6 @@ app.get("/", (req, res, next) => {
 app.get("/path", (req, res, next) => {
   return res.status(200).json({
     message: "Hello from path!",
-  });
-});
-
-app.use((req, res, next) => {
-  return res.status(404).json({
-    error: "Not Found",
   });
 });
 

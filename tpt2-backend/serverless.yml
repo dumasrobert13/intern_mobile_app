@@ -16,3 +16,10 @@ functions:
       - httpApi: 
           path: '/path'
           method: GET
+
+  facebookSignIn:
+    handler: endpoints.auth.facebookAuth.signIn
+    events: 
+      - httpApi:
+          path: '/facebook_signin'
+          method: POST
