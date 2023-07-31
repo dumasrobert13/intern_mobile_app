@@ -1,4 +1,3 @@
-
 import 'package:go_router/go_router.dart';
 import 'package:intern_mobile_app/pages/Home/explore.dart';
 import 'package:intern_mobile_app/pages/onboarding/initial_page.dart';
@@ -32,7 +31,7 @@ class MyAppRouter {
       GoRoute(
         name: 'onBoarding',
         path: '/on_boarding',
-        builder: (context, state) => OnboardingScreen(),
+        builder: (context, state) => const OnboardingScreen(),
       ),
     ],
   );

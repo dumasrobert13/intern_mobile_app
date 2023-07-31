@@ -1,0 +1,16 @@
+service: tpt2-backend
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  profile: default
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - httpApi: 
+          path: '/api/google-signin'
+          method: POST
+          
